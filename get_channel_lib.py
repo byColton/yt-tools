@@ -3,7 +3,7 @@ import pandas as pd
 from pytubefix import YouTube, Channel
 
 def get_tube_lib(name):
-    '''This function takes a channel name and returns a pandas dataframe with the video id and title.'''
+    '''This function takes a channel name and returns a pandas dataframe with the video id, title, description, and thumbnail url.'''
 
     # create lists for the video id and title columns
     ids = []
