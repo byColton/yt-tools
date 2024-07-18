@@ -16,6 +16,8 @@ def get_tube_lib(name):
 
     c = Channel(f'https://www.youtube.com/@{name}')
 
+    print(f'---------------------Getting video information for {}---------------------------------------------------')
+
     for video in c.videos:
         ids.append(video.video_id)
         titles.append(video.title)
