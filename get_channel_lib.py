@@ -2,9 +2,15 @@ import argparse
 import pandas as pd
 from pytubefix import YouTube, Channel
 
+<<<<<<< HEAD
 def get_tube_lib(channel_names):
     '''This function takes a channel names and returns a pandas dataframe with the channel name, video id, video title, description, and thumbnail url.'''
     
+=======
+def get_tube_lib(name):
+    '''This function takes a channel name and returns a pandas dataframe with the video id, title, description, and thumbnail url.'''
+
+>>>>>>> ecb36bdd2595e516ca04b262fedbfdfaa2355b6f
     # create lists for the video id and title columns
     channels = []
     ids = []
@@ -15,7 +21,20 @@ def get_tube_lib(channel_names):
     # dictionary for reference
     video_dict = {}
 
+<<<<<<< HEAD
     for name in channel_names:
+=======
+    c = Channel(f'https://www.youtube.com/@{name}')
+
+    print(f'---------------------Getting video information for {}---------------------------------------------------')
+
+    for video in c.videos:
+        ids.append(video.video_id)
+        titles.append(video.title)
+        desc.append(video.description)
+        thumbnail_url.append(video.thumbnail_url)
+        video_dict[video.video_id] = video.title
+>>>>>>> ecb36bdd2595e516ca04b262fedbfdfaa2355b6f
 
         print(f'Getting videos information for {name}')
     
